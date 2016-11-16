@@ -13,7 +13,7 @@ public class Minesweeper extends Organism {
   final private static double SPEED             = 2;
   final private static double ROTATION_SPEED    = Math.PI;
 
-  private double              x, y, rotation, radius = 2;
+  private double              x, y, rotation, radius = 3;
 
   private static Vector<Food> food              = new Vector<Food>();
 
@@ -101,7 +101,7 @@ public class Minesweeper extends Organism {
         lowestFoodIndex = i;
       }
     }
-    
+
     double rotationInput = Math.toRadians(lowestAngle) - this.getRotation();
     if (rotationInput < 0) {
       if (Math.abs(rotationInput) > Math.PI) {
