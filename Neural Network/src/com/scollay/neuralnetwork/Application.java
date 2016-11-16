@@ -28,7 +28,7 @@ public class Application {
     }
     GenePool genePool = new GenePool(population);
 
-    for (int i = 0; i < 2000; i++) {
+    for (int i = 0; i < 0; i++) {
       genePool.timeLapse(20000);
       Application.getxCoords()[0].add((double) Application.getxCoords()[0].size());
       Application.getxCoords()[1].add((double) Application.getxCoords()[1].size());
