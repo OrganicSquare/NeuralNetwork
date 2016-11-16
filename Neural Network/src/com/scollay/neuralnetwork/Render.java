@@ -37,22 +37,22 @@ public class Render extends JPanel implements ActionListener {
     }
     g.translate(-Application.SIM_X, -Application.SIM_Y);
 
-    genePool.sort();
+    //genePool.sort();
     for (int i = 0; i < genePool.getOrganisms().size(); i++) {
-      genePool.getOrganisms().get(i).getBrain().draw(g, Application.SIM_X + Application.SIM_WIDTH + 10 + (90 * (i % 3)),
-          Application.SIM_Y + (90 * (i / 3)), 80, 80);
+      genePool.getOrganisms().get(i).getBrain().draw(g, Application.SIM_X + Application.SIM_WIDTH + 10 + (90 * (i % 4)),
+          Application.SIM_Y + (90 * (i / 4)), 80, 80);
     }
     
     
-    Graph.drawLineGraph(g, Application.getxCoords(), Application.getyCoords(), Application.SIM_X + 30, Application.SIM_Y + Application.SIM_HEIGHT + 10, 700, 190);
+    Graph.drawLineGraph(g, Application.getxCoords(), Application.getyCoords(), Application.SIM_X+Application.SIM_WIDTH + 30, Application.SIM_Y + Application.SIM_HEIGHT - 190, 340, 180);
 
   }
 
   public void actionPerformed(ActionEvent e) {
     x++;
     genePool.timeLapse(1);
-    if (x >= 1000) {
-      genePool.timeLapse(20000);
+    if (x >= 500) {
+      genePool.timeLapse(9500);
       updateGraph();
       genePool.update();
       x = 0;
